@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57C4B301-D082-4C8D-8929-76C876C8E09C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>gym_management_system</RootNamespace>
+    <AssemblyName>gym-management-system</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Dataviz.WinForms.2.2.1\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Dataviz.WinForms.2.2.1\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.8.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.0.8\lib\net48\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\Desktop\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="custom_widgets\accessError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_widgets\accessError.Designer.cs">
+      <DependentUpon>accessError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addBils.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addBils.Designer.cs">
+      <DependentUpon>addBils.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bodybuilderOperations\addBodyBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bodybuilderOperations\addBodyBuilder.Designer.cs">
+      <DependentUpon>addBodyBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bodybuilderOperations\deleteBodyBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bodybuilderOperations\deleteBodyBuilderForm.Designer.cs">
+      <DependentUpon>deleteBodyBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deleteExersice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteExersice.Designer.cs">
+      <DependentUpon>deleteExersice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employeeOperations\deleteEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employeeOperations\deleteEmployee.Designer.cs">
+      <DependentUpon>deleteEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exersiceOperations\editExersise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exersiceOperations\editExersise.Designer.cs">
+      <DependentUpon>editExersise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employeeOperations\addEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employeeOperations\addEmployeeForm.Designer.cs">
+      <DependentUpon>addEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bodybuilderOperations\editBodyBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bodybuilderOperations\editBodyBuilder.Designer.cs">
+      <DependentUpon>editBodyBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_widgets\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_widgets\CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employeeOperations\editEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employeeOperations\editEmployee.Designer.cs">
+      <DependentUpon>editEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="custom_widgets\Emptyfields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="custom_widgets\Emptyfields.Designer.cs">
+      <DependentUpon>Emptyfields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exersiceOperations\exersiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exersiceOperations\exersiceForm.Designer.cs">
+      <DependentUpon>exersiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="gym_managemntDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gym_managemntDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="menu items\bodybuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu items\bodybuilder.Designer.cs">
+      <DependentUpon>bodybuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu items\mainDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu items\mainDashboard.Designer.cs">
+      <DependentUpon>mainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menu items\managerDashbordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu items\managerDashbordControl.Designer.cs">
+      <DependentUpon>managerDashbordControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="menu items\employeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="menu items\employeeControl.Designer.cs">
+      <DependentUpon>employeeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlQueries.cs" />
+    <EmbeddedResource Include="custom_widgets\accessError.resx">
+      <DependentUpon>accessError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addBils.resx">
+      <DependentUpon>addBils.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bodybuilderOperations\addBodyBuilder.resx">
+      <DependentUpon>addBodyBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bodybuilderOperations\deleteBodyBuilderForm.resx">
+      <DependentUpon>deleteBodyBuilderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteExersice.resx">
+      <DependentUpon>deleteExersice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeeOperations\deleteEmployee.resx">
+      <DependentUpon>deleteEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exersiceOperations\editExersise.resx">
+      <DependentUpon>editExersise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeeOperations\addEmployeeForm.resx">
+      <DependentUpon>addEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bodybuilderOperations\editBodyBuilder.resx">
+      <DependentUpon>editBodyBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_widgets\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeeOperations\editEmployee.resx">
+      <DependentUpon>editEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="custom_widgets\Emptyfields.resx">
+      <DependentUpon>Emptyfields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exersiceOperations\exersiceForm.resx">
+      <DependentUpon>exersiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu items\managerDashbordControl.resx">
+      <DependentUpon>managerDashbordControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu items\bodybuilder.resx">
+      <DependentUpon>bodybuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu items\mainDashboard.resx">
+      <DependentUpon>mainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menu items\employeeControl.resx">
+      <DependentUpon>employeeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="gym_managemntDataSet.xsc">
+      <DependentUpon>gym_managemntDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet.xss">
+      <DependentUpon>gym_managemntDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet1.xsc">
+      <DependentUpon>gym_managemntDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet1.xss">
+      <DependentUpon>gym_managemntDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet2.xsc">
+      <DependentUpon>gym_managemntDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet2.xss">
+      <DependentUpon>gym_managemntDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet3.xsc">
+      <DependentUpon>gym_managemntDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet3.xss">
+      <DependentUpon>gym_managemntDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet4.xsc">
+      <DependentUpon>gym_managemntDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet4.xss">
+      <DependentUpon>gym_managemntDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet5.xsc">
+      <DependentUpon>gym_managemntDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet5.xss">
+      <DependentUpon>gym_managemntDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet6.xsc">
+      <DependentUpon>gym_managemntDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="gym_managemntDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gym_managemntDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gym_managemntDataSet6.xss">
+      <DependentUpon>gym_managemntDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-open-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Workout-amico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Workout-amico %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 84.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-window-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-subtract-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangle 85.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Benedict-Cumberbatch-C-Mark-Mann.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-hamburger-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-svgrepo-com %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-svgrepo-com %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workers-team-svgrepo-com %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\workers-team-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-gymnast-flexing-arms %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-gymnast-flexing-arms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-william-choquette-1954524.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-dids-5407033.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-tata-rahubovskiy-7031705.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-friend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-friend %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add friends-rafiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Computer login-amico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\treadmill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mortgage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\janitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gym.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
