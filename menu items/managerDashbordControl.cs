@@ -48,7 +48,7 @@ namespace gym_management_system
             var t2 = getTotalSalary("Janitorial staff") /*/ float.Parse(totalEx) * 100*/;
             var t3 = getTotalSalary(" Front desk staff") /*/ float.Parse(totalEx) * 100*/;
             var sum = t + t2 + t3;
-            MessageBox.Show("trainer total: %" + "-" +t.ToString()+Environment.NewLine+"janitor:"+ t2.ToString() +Environment.NewLine+"casher total: "+ t3.ToString()+Environment.NewLine+" sum: " + sum);
+
             trainerProgress.Value =Convert.ToInt32( getTotalSalary("Trainer") / sum * 100);
             janitorProgress.Value = Convert.ToInt32(getTotalSalary("Janitorial staff") / sum * 100);
             frontDeskProgress.Value = Convert.ToInt32(getTotalSalary(" Front desk staff") / sum * 100);
@@ -71,7 +71,7 @@ namespace gym_management_system
             chart1.Series["Series1"].MarkerBorderWidth = 2;
 
 
-            label31.Text = (memberShipIncome() - sum + Convert.ToInt32(totalEx)).ToString() + "$";
+            label31.Text = (sum + Convert.ToInt32(totalEx) - memberShipIncome()).ToString() + "$";
         }
 
         int countEmployees(string role)

@@ -137,10 +137,11 @@ namespace gym_management_system
             this.Tab2.BorderRadius = 31;
             this.Tab2.Controls.Add(this.employeeTabel);
             this.Tab2.Controls.Add(this.employeeIcon);
+            this.Tab2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Tab2.Location = new System.Drawing.Point(3, 325);
             this.Tab2.Name = "Tab2";
             this.Tab2.ShadowDecoration.Parent = this.Tab2;
-            this.Tab2.Size = new System.Drawing.Size(220, 65);
+            this.Tab2.Size = new System.Drawing.Size(234, 65);
             this.Tab2.TabIndex = 21;
             this.Tab2.Click += new System.EventHandler(this.Tab2_Click);
             // 
@@ -175,10 +176,11 @@ namespace gym_management_system
             this.Tab1.BorderRadius = 29;
             this.Tab1.Controls.Add(this.dashbordLabel);
             this.Tab1.Controls.Add(this.homeIcon);
+            this.Tab1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Tab1.Location = new System.Drawing.Point(3, 117);
             this.Tab1.Name = "Tab1";
             this.Tab1.ShadowDecoration.Parent = this.Tab1;
-            this.Tab1.Size = new System.Drawing.Size(220, 60);
+            this.Tab1.Size = new System.Drawing.Size(234, 60);
             this.Tab1.TabIndex = 20;
             this.Tab1.Click += new System.EventHandler(this.Tab1_Click);
             this.Tab1.Paint += new System.Windows.Forms.PaintEventHandler(this.Tab1_Paint);
@@ -255,10 +257,11 @@ namespace gym_management_system
             this.bbTab.BorderRadius = 31;
             this.bbTab.Controls.Add(this.bodybuilderLabel);
             this.bbTab.Controls.Add(this.bodyBuilderIcon);
+            this.bbTab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bbTab.Location = new System.Drawing.Point(3, 183);
             this.bbTab.Name = "bbTab";
             this.bbTab.ShadowDecoration.Parent = this.bbTab;
-            this.bbTab.Size = new System.Drawing.Size(220, 65);
+            this.bbTab.Size = new System.Drawing.Size(234, 65);
             this.bbTab.TabIndex = 22;
             this.bbTab.Click += new System.EventHandler(this.guna2Panel1_Click);
             // 
@@ -293,10 +296,11 @@ namespace gym_management_system
             this.Tab4.BorderRadius = 31;
             this.Tab4.Controls.Add(this.managerLabel);
             this.Tab4.Controls.Add(this.managerIcon);
+            this.Tab4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Tab4.Location = new System.Drawing.Point(3, 254);
             this.Tab4.Name = "Tab4";
             this.Tab4.ShadowDecoration.Parent = this.Tab4;
-            this.Tab4.Size = new System.Drawing.Size(230, 65);
+            this.Tab4.Size = new System.Drawing.Size(234, 65);
             this.Tab4.TabIndex = 23;
             this.Tab4.Click += new System.EventHandler(this.Tab4_Click);
             this.Tab4.Paint += new System.Windows.Forms.PaintEventHandler(this.Tab4_Paint);

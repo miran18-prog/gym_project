@@ -72,7 +72,8 @@ namespace gym_management_system
                 {
                     gender = 'F';
                 }
-                command = new SqlCommand("insert into Body_Builder values('" + firstnameTxt.Text + "','" + lastnameTxt.Text + "','" + weightTxt.Text + "','" + heightTxt.Text + "','" + illenessTxt.Text + "','" + startDateTxt.Text + "','" + ExexpireDateTxt.Text + "','" +payment + "','" + phoneNumberTxt.Text + "','" + gender + "')", connection);
+                command = new SqlCommand("insert into Body_Builder values('" + firstnameTxt.Text + "','" + lastnameTxt.Text + "','" + weightTxt.Text + "','" + heightTxt.Text + "'," +
+                    "'" + illenessTxt.Text + "','" + startDateTxt.Text + "','" + ExexpireDateTxt.Text + "','" +payment + "','" + phoneNumberTxt.Text + "','" + gender + "')", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 this.Close();
