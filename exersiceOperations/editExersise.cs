@@ -57,7 +57,8 @@ namespace gym_management_system
             if (setsTxt.Text!=""&& repsTxt.Text!=""&&exerciseNameTxt.Text!="") {
                 connection.Close();
                 connection.Open();
-                command = new SqlCommand("update Exercises set  Exercises_Name='" + exerciseNameTxt.Text + "', Exercises_Sets='" + setsTxt.Text + "',Exercises_Reps ='" + repsTxt.Text + "' where Exercises_name='" + exerciseNameTxt.Text + "' ", connection);
+                command = new SqlCommand("update Exercises set  Exercises_Name='" + exerciseNameTxt.Text + "', Exercises_Sets='" + setsTxt.Text + "'," +
+                    "Exercises_Reps ='" + repsTxt.Text + "' where Exercises_name='" + exerciseNameTxt.Text + "' ", connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 this.Close();

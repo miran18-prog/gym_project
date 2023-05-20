@@ -111,7 +111,8 @@ namespace gym_management_system
                 waterBill.Text = dataReader["water_bill"].ToString() + '$';
                 machineBill.Text = dataReader["machine_expenses"].ToString() + '$';
                 gymLabel.Text = dataReader["gym_rent"].ToString() + '$';
-                totalEx = (float.Parse(dataReader["electricity"].ToString()) + float.Parse(dataReader["water_bill"].ToString()) + float.Parse(dataReader["machine_expenses"].ToString()) + float.Parse(dataReader["gym_rent"].ToString())).ToString();
+                totalEx = (float.Parse(dataReader["electricity"].ToString()) + float.Parse(dataReader["water_bill"].ToString()) +
+                    float.Parse(dataReader["machine_expenses"].ToString()) + float.Parse(dataReader["gym_rent"].ToString())).ToString();
                 totalExpenses.Text = totalEx + '$';
             }
             connection.Close();

@@ -68,11 +68,14 @@ namespace gym_management_system
         {
 
 
-            if (firstnameTxt.Text != "" && lastnameTxt.Text != "" && illenessTxt.Text != "" && heightTxt.Text != "" && weightTxt.Text != "" && phonenumberTxt.Text != "")
+            if (firstnameTxt.Text != "" && lastnameTxt.Text != "" && illenessTxt.Text != "" && heightTxt.Text != "" 
+                && weightTxt.Text != "" && phonenumberTxt.Text != "")
             {
                 connection.Close();
                 connection.Open();
-                command = new SqlCommand("Update Body_Builder set BD_First_Name='" + firstnameTxt.Text + "', BD_Last_Name='" + lastnameTxt.Text + "', BD_Weight='" + weightTxt.Text + "' ,BD_Height='" + heightTxt.Text + "', BD_Illeness='" + illenessTxt.Text + "'  where BD_ID='" + id + "'", connection);
+                command = new SqlCommand("Update Body_Builder set BD_First_Name='" + firstnameTxt.Text + "', BD_Last_Name='" + lastnameTxt.Text + "'," +
+                " BD_Weight='" + weightTxt.Text + "' ,BD_Height='" + heightTxt.Text + "'," +
+                " BD_Illeness='" + illenessTxt.Text + "'  where BD_ID='" + id + "'", connection);
                 command.ExecuteReader();
                 connection.Close();
             }

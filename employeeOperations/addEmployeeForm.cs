@@ -52,11 +52,14 @@ namespace gym_management_system
             {
                 is_admin = 0;
             }
-            if (usernameTxt.Text != "" && passwordTxt.Text != "" && firstnameTxt.Text != "" && lastnameTxt.Text != "" && phoneNumberTxt.Text != "" && roleCombo.Text != "" && salaryTxt.Text != "" && date.Text != "")
+            if (usernameTxt.Text != "" && passwordTxt.Text != "" && firstnameTxt.Text != "" && lastnameTxt.Text != "" 
+                && phoneNumberTxt.Text != "" && roleCombo.Text != "" && salaryTxt.Text != "" && date.Text != "")
             {
                 connection.Close();
                 connection.Open();
-                command = new SqlCommand("insert into employee values('" + usernameTxt.Text + "' , '" + passwordTxt.Text + "', '" + firstnameTxt.Text + "','" + lastnameTxt.Text + "' ,'" + DateTime.Now.ToShortDateString() + "','" + salaryTxt.Text + "','" + roleCombo.Text + "','" + phoneNumberTxt.Text + "','" + is_admin + "')", connection);
+                command = new SqlCommand("insert into employee values('" + usernameTxt.Text + "' , '" + passwordTxt.Text + "', '" + firstnameTxt.Text + "','" +
+                    lastnameTxt.Text + "' ,'" + DateTime.Now.ToShortDateString() + "','" + salaryTxt.Text + "'," +
+                    "'" + roleCombo.Text + "','" + phoneNumberTxt.Text + "','" + is_admin + "')" , connection);
                 command.ExecuteNonQuery();
                 connection.Close();
                 this.Close();
